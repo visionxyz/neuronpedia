@@ -62,7 +62,7 @@ COPY ${ENV_FILE} .env
 
 # Build with environment variables loaded from dotenv
 # Force regenerate Prisma client with correct binary target
-RUN bash -c 'set -a && source .env && set +a && npx prisma generate && npm run build'
+RUN bash -c 'set -a && source .env && set +a && npx prisma generate && npm run build:simple'
 
 ###############################################################################################
 # Database initialization image (has access to ts-node and dev dependencies)
